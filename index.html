@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wood River PTA - Promoting the general welfare of children in collaboration with teachers, the community, and the school.">
+    <title>Wood River PTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="logo">
+                <div class="site-title">
+                    <h1>Wood River PTA</h1>
+                </div>
+            </div>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <div class="glass-card main-card fade-in-up">
+                    <span class="badge">Our Mission</span>
+                    <h2>Promoting the general welfare of children.</h2>
+                    <p class="mission-text">
+                        The Woodriver PTA promotes the general welfare of children in collaboration with teachers, the community, and the school.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Get Involved</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container contact-container">
+                <div class="contact-card slide-in-up">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <h3>Contact the President</h3>
+                    <p>We'd love to hear from you! Reach out for questions, volunteering opportunities, or more information about the Wood River PTA.</p>
+                    <a href="mailto:president@woodriverpta.org" class="email-link">president@woodriverpta.org</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="footer-logo">
+                <span>Wood River PTA</span>
+            </div>
+            <div class="footer-links">
+                <p>&copy; <span id="year"></span> Wood River PTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-in-up, .fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
