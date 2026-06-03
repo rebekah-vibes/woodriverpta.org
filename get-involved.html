@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get involved with the Wood River PTA">
+    <title>Get Involved - Wood River PTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-layout">
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrapper" style="text-decoration: none;">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="logo">
+                <div class="site-title">
+                    <h1>Wood River PTA</h1>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="mission.html" class="nav-link">Our Mission</a>
+                <a href="about.html" class="nav-link">About Us</a>
+            </nav>
+            <a href="get-involved.html" class="btn btn-outline active">Get Involved</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="content-header fade-in-up">
+                <span class="badge">Join Us</span>
+                <h2>Get Involved</h2>
+            </div>
+            
+            <div class="contact-section" style="padding-top: 0;">
+                <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    
+                    <div class="contact-card slide-in-up" style="padding: 3rem;">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <h3>Contact Us</h3>
+                        <p>We'd love to hear from you! Reach out for questions, volunteering opportunities, or more information.</p>
+                        <a href="mailto:president@woodriverpta.org" class="email-link">president@woodriverpta.org</a>
+                    </div>
+
+                    <div class="contact-card slide-in-up" style="padding: 3rem; transition-delay: 0.1s;">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <h3>Location & Details</h3>
+                        <p><strong>15118 Dry Creek Dr<br>Corpus Christi, TX 78410</strong></p>
+                        <p style="margin-top: 1.5rem; font-size: 0.95rem;">
+                        Registered Nonprofit ID:<br>
+                        <strong>74-2609897</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="content-card slide-in-up" style="margin-top: 3rem; text-align: center;">
+                <h3>Become a Member or Volunteer</h3>
+                <p>Your membership helps fund vital programs and provides a voice for our children. Support Wood River Elementary by joining the PTA today!</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <a href="https://bit.ly/4dyhjS8" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Join the PTA Online</a>
+                    <a href="https://bit.ly/4lxd1y3" target="_blank" class="btn btn-outline" style="font-size: 1.1rem; padding: 1rem 2rem;">Volunteer Training</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="footer-logo">
+                <div class="footer-details">
+                    <span class="footer-title">Wood River PTA</span>
+                    <span class="footer-charity">Nonprofit ID: 74-2609897</span>
+                </div>
+            </div>
+            <div class="footer-address">
+                <p>15118 Dry Creek Dr</p>
+                <p>Corpus Christi, TX 78410</p>
+            </div>
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <p><a href="https://bit.ly/4dyhjS8" target="_blank" style="color: white; text-decoration: none;">Join the PTA</a></p>
+                <p><a href="https://www.facebook.com/calallenisdwoodriverpta" target="_blank" style="color: white; text-decoration: none;">Facebook Page</a></p>
+                <p><a href="https://bit.ly/3I65V5u" target="_blank" style="color: white; text-decoration: none;">WRE Calallen.org</a></p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; <span id="year"></span> Wood River PTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelectorAll('.slide-in-up, .fade-in-up').forEach((el) => {
+            el.classList.add('visible'); // Quick reveal for standard pages
+        });
+    </script>
+</body>
+</html>

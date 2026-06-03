@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wood River PTA Mission and Vision">
+    <title>Our Mission - Wood River PTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-layout">
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-wrapper" style="text-decoration: none;">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="logo">
+                <div class="site-title">
+                    <h1>Wood River PTA</h1>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="mission.html" class="nav-link active">Our Mission</a>
+                <a href="about.html" class="nav-link">About Us</a>
+            </nav>
+            <a href="get-involved.html" class="btn btn-outline">Get Involved</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="content-header fade-in-up">
+                <span class="badge">Purpose</span>
+                <h2>Our Mission & Vision</h2>
+            </div>
+            
+            <div class="content-card slide-in-up">
+                <div class="highlight-box">
+                    <h3>"The Wood River PTA promotes the general welfare of children in collaboration with teachers, the community, and the school."</h3>
+                </div>
+                
+                <h4>Our Vision & Affiliation</h4>
+                <p><strong>Every child’s potential is a reality.</strong> As a proud local unit of the Texas PTA, we share in their statewide mission: <em>"To make every child's potential a reality by engaging and empowering families and communities to advocate for all children."</em> We envision a Wood River community where all students have the resources, support, and environment they need to thrive both academically and personally.</p>
+                
+                <h4>Our Core Values</h4>
+                <ul class="values-list">
+                    <li><strong>Collaboration:</strong> Working in partnership with a wide array of individuals and organizations to broaden and enhance the ability to serve and advocate for all children and families.</li>
+                    <li><strong>Commitment:</strong> Dedicated to children’s educational success, health, and well-being through strong family and community engagement, while remaining accountable to the principles upon which the association was founded.</li>
+                    <li><strong>Diversity:</strong> Acknowledging the potential of everyone without regard to factors including, but not limited to, age, culture, economic status, educational background, ethnicity, gender, geographic location, legal status, marital status, mental ability, national origin, organizational position, parental status, physical ability, political philosophy, race, religion, sexual orientation, and work experience.</li>
+                    <li><strong>Respect:</strong> Valuing the individual contributions of members, employees, volunteers, and partners as the organization works collaboratively to achieve its goals.</li>
+                    <li><strong>Accountability:</strong> Ensuring that all members, employees, volunteers, and partners share the responsibility to align their efforts toward the achievement of the association's strategic initiatives.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Wood River Elementary Logo" class="footer-logo">
+                <div class="footer-details">
+                    <span class="footer-title">Wood River PTA</span>
+                    <span class="footer-charity">Nonprofit ID: 74-2609897</span>
+                </div>
+            </div>
+            <div class="footer-address">
+                <p>15118 Dry Creek Dr</p>
+                <p>Corpus Christi, TX 78410</p>
+            </div>
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <p><a href="https://bit.ly/4dyhjS8" target="_blank" style="color: white; text-decoration: none;">Join the PTA</a></p>
+                <p><a href="https://www.facebook.com/calallenisdwoodriverpta" target="_blank" style="color: white; text-decoration: none;">Facebook Page</a></p>
+                <p><a href="https://bit.ly/3I65V5u" target="_blank" style="color: white; text-decoration: none;">WRE Calallen.org</a></p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; <span id="year"></span> Wood River PTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelectorAll('.slide-in-up, .fade-in-up').forEach((el) => {
+            el.classList.add('visible'); // Quick reveal for standard pages
+        });
+    </script>
+</body>
+</html>

@@ -14,13 +14,18 @@
 
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo-wrapper">
+            <a href="index.html" class="logo-wrapper" style="text-decoration: none;">
                 <img src="logo.png" alt="Wood River Elementary Logo" class="logo">
                 <div class="site-title">
                     <h1>Wood River PTA</h1>
                 </div>
-            </div>
-            <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="mission.html" class="nav-link">Our Mission</a>
+                <a href="about.html" class="nav-link">About Us</a>
+            </nav>
+            <a href="get-involved.html" class="btn btn-outline">Get Involved</a>
         </div>
     </header>
 
@@ -29,25 +34,35 @@
             <div class="hero-bg"></div>
             <div class="container hero-content">
                 <div class="glass-card main-card fade-in-up">
-                    <span class="badge">Our Mission</span>
-                    <h2>Promoting the general welfare of children.</h2>
+                    <span class="badge">Welcome</span>
+                    <h2>Supporting Our Students & Community</h2>
                     <p class="mission-text">
-                        The Woodriver PTA promotes the general welfare of children in collaboration with teachers, the community, and the school.
+                        Join the Wood River PTA in making a difference for our children, teachers, and school.
                     </p>
-                    <a href="#contact" class="btn btn-primary">Get Involved</a>
+                    <div class="hero-buttons">
+                        <a href="mission.html" class="btn btn-primary">Our Mission</a>
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container contact-container">
-                <div class="contact-card slide-in-up">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </div>
-                    <h3>Contact the President</h3>
-                    <p>We'd love to hear from you! Reach out for questions, volunteering opportunities, or more information about the Wood River PTA.</p>
-                    <a href="mailto:president@woodriverpta.org" class="email-link">president@woodriverpta.org</a>
+        <section class="info-section">
+            <div class="container info-grid">
+                <div class="info-card slide-in-up">
+                    <h3>Our Mission</h3>
+                    <p>We promote the general welfare of children in collaboration with our community.</p>
+                    <a href="mission.html" class="read-more">Read our mission &rarr;</a>
+                </div>
+                <div class="info-card slide-in-up" style="transition-delay: 0.1s;">
+                    <h3>About Us</h3>
+                    <p>Learn about who we are, what we do, and the impact we have on our school.</p>
+                    <a href="about.html" class="read-more">Get to know us &rarr;</a>
+                </div>
+                <div class="info-card slide-in-up" style="transition-delay: 0.2s;">
+                    <h3>Get Involved</h3>
+                    <p>Become a member, volunteer for events, or support us through donations.</p>
+                    <a href="get-involved.html" class="read-more">Join the PTA &rarr;</a>
                 </div>
             </div>
         </section>
@@ -57,7 +72,20 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <img src="logo.png" alt="Wood River Elementary Logo" class="footer-logo">
-                <span>Wood River PTA</span>
+                <div class="footer-details">
+                    <span class="footer-title">Wood River PTA</span>
+                    <span class="footer-charity">Nonprofit ID: 74-2609897</span>
+                </div>
+            </div>
+            <div class="footer-address">
+                <p>15118 Dry Creek Dr</p>
+                <p>Corpus Christi, TX 78410</p>
+            </div>
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <p><a href="https://bit.ly/4dyhjS8" target="_blank" style="color: white; text-decoration: none;">Join the PTA</a></p>
+                <p><a href="https://www.facebook.com/calallenisdwoodriverpta" target="_blank" style="color: white; text-decoration: none;">Facebook Page</a></p>
+                <p><a href="https://bit.ly/3I65V5u" target="_blank" style="color: white; text-decoration: none;">WRE Calallen.org</a></p>
             </div>
             <div class="footer-links">
                 <p>&copy; <span id="year"></span> Wood River PTA. All rights reserved.</p>
@@ -68,7 +96,6 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             root: null,
             rootMargin: '0px',

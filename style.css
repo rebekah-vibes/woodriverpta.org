@@ -36,7 +36,8 @@ h1, h2, h3, h4 {
 
 h1 { font-size: 1.5rem; }
 h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-color); }
-h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+h4 { font-size: 1.25rem; margin-bottom: 0.5rem; margin-top: 1.5rem; }
 
 /* Layout Containers */
 .container {
@@ -67,10 +68,53 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     align-items: center;
 }
 
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .logo-wrapper {
     display: flex;
     align-items: center;
     gap: 1rem;
+    transition: opacity 0.3s;
+}
+
+.logo-wrapper:hover {
+    opacity: 0.8;
 }
 
 .logo {
@@ -121,18 +165,90 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     border: 2px solid var(--primary-color);
 }
 
-.btn-outline:hover {
+.btn-outline:hover, .btn-outline.active {
     background-color: var(--primary-color);
     color: var(--white);
 }
 
-/* Hero Section */
-.hero {
-    position: relative;
+/* Page Layouts (Non-Hero pages) */
+.page-layout {
+    padding-top: 100px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    padding: 4rem 0;
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.content-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-card p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.highlight-box {
+    background-color: rgba(80, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.highlight-box h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+.values-list {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.values-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.values-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+}
+
+/* Hero Section (Homepage) */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
     align-items: center;
-    padding-top: 80px; /* Offset for navbar */
+    padding-top: 80px;
     overflow: hidden;
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
 }
@@ -160,6 +276,13 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     z-index: 1;
     display: flex;
     justify-content: center;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 /* Glassmorphism Card */
@@ -197,15 +320,47 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     margin-right: auto;
 }
 
-/* Contact Section */
-.contact-section {
+/* Info Grid (Homepage) */
+.info-section {
     padding: 6rem 0;
     background-color: var(--white);
 }
 
-.contact-container {
-    display: flex;
-    justify-content: center;
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: linear-gradient(180deg, var(--white) 0%, #fcfcfc 100%);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: padding-left 0.3s ease;
+}
+
+.read-more:hover {
+    padding-left: 5px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 0;
 }
 
 .contact-card {
@@ -213,7 +368,6 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     border-radius: var(--radius);
     padding: 4rem;
     text-align: center;
-    max-width: 600px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -269,30 +423,48 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
     background-color: var(--primary-color);
     color: var(--white);
     padding: 3rem 0;
+    margin-top: auto; /* Pushes footer to bottom if page is short */
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    align-items: start;
 }
 
 .footer-brand {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-weight: 600;
-    font-size: 1.25rem;
 }
 
 .footer-logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: var(--white);
     padding: 2px;
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.footer-charity {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.footer-address {
+    font-size: 0.95rem;
+    opacity: 0.9;
 }
 
 .footer-links p {
@@ -313,6 +485,12 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* In a real scenario, we'd add a hamburger menu here */
+    }
+}
+
 @media (max-width: 768px) {
     .glass-card {
         padding: 2.5rem 1.5rem;
@@ -326,7 +504,7 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
         font-size: 1.1rem;
     }
     
-    .contact-card {
+    .contact-card, .content-card {
         padding: 2.5rem 1.5rem;
     }
     
@@ -334,15 +512,13 @@ h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
         font-size: 1.25rem;
     }
     
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
+    .contact-container {
+        grid-template-columns: 1fr !important;
     }
 }
 
 @media (max-width: 480px) {
     .site-title h1 {
-        display: none; /* Hide text on very small screens, show only logo */
+        display: none;
     }
 }
