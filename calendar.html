@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About the Wood River PTA">
-    <title>About Us - Wood River PTA</title>
+    <meta name="description" content="Wood River PTA calendar of upcoming events and activities">
+    <title>Calendar - Wood River PTA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -25,8 +25,8 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="mission.html" class="nav-link">Our Mission</a>
                 <a href="impact.html" class="nav-link">Our Impact</a>
-                <a href="calendar.html" class="nav-link">Calendar</a>
-                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="calendar.html" class="nav-link active">Calendar</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <a href="get-involved.html" class="nav-link mobile-only">Get Involved</a>
             </nav>
             <a href="get-involved.html" class="btn btn-outline">Get Involved</a>
@@ -36,16 +36,30 @@
     <main class="page-content">
         <div class="container">
             <div class="content-header fade-in-up">
-                <span class="badge">Who We Are</span>
-                <h2>About the Wood River PTA</h2>
+                <span class="badge">Stay Connected</span>
+                <h2>PTA Calendar</h2>
             </div>
-            
-            <div class="content-card slide-in-up">
-                <p>The Wood River Parent Teacher Association (PTA) is a vital bridge between the home and the school. We are a passionate group of parents, teachers, and community members dedicated to ensuring the best possible educational and social environment for our children.</p>
-                
 
-                <h4>Our History</h4>
-                <p>For years, the Wood River PTA has proudly served alongside the Calallen ISD community to promote excellence and create a bright future for our youth. We believe that when parents are involved in their children's education, students achieve more, schools perform better, and communities grow stronger.</p>
+            <div class="content-card calendar-card slide-in-up">
+                <div class="calendar-intro">
+                    <h3>Upcoming Events</h3>
+                    <p>Keep up with Wood River PTA events, activities, meetings, and volunteer opportunities.</p>
+                </div>
+
+                <div class="calendar-frame-wrapper">
+                    <iframe
+                        class="calendar-frame"
+                        src="https://calendar.google.com/calendar/embed?src=c_4077235cdae95e1c2e059b5c0850158bf01dd8b541c1b919e0cd127f94ea80c4%40group.calendar.google.com&amp;ctz=America%2FChicago"
+                        title="Wood River PTA Google Calendar"
+                        width="800"
+                        height="650"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="calendar-actions">
+                    <a href="https://calendar.google.com/calendar/ical/c_4077235cdae95e1c2e059b5c0850158bf01dd8b541c1b919e0cd127f94ea80c4%40group.calendar.google.com/public/basic.ics" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe to the Calendar</a>
+                </div>
             </div>
         </div>
     </main>
@@ -66,9 +80,9 @@
             </div>
             <div class="footer-quick-links">
                 <h4>Quick Links</h4>
-                <p><a href="https://bit.ly/4dyhjS8" target="_blank" style="color: white; text-decoration: none;">Join the PTA</a></p>
-                <p><a href="https://www.facebook.com/calallenisdwoodriverpta" target="_blank" style="color: white; text-decoration: none;">Facebook Page</a></p>
-                <p><a href="https://bit.ly/3I65V5u" target="_blank" style="color: white; text-decoration: none;">WRE Calallen.org</a></p>
+                <p><a href="https://bit.ly/4dyhjS8" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Join the PTA</a></p>
+                <p><a href="https://www.facebook.com/calallenisdwoodriverpta" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Facebook Page</a></p>
+                <p><a href="https://bit.ly/3I65V5u" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">WRE Calallen.org</a></p>
             </div>
             <div class="footer-links">
                 <p>&copy; <span id="year"></span> Wood River PTA. All rights reserved.</p>
@@ -84,7 +98,7 @@
 
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
+
         if (mobileMenuBtn && navLinks) {
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('mobile-active');
